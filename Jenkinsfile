@@ -43,7 +43,6 @@ pipeline {
         }
         stage('Apply and destroy') {
             steps {
-                sh 'pwd; terraform apply -input=false tfplan'
                 sh 'pwd; terraform $action -input=false tfplan'
             }
         }
