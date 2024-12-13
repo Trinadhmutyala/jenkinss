@@ -41,9 +41,9 @@ pipeline {
                 }
             }
         }
-        stage('Apply and destroy') {
+        stage('Apply') {
             steps {
-                sh 'pwd; terraform $action -auto-approve'
+                sh "pwd;cd terraform/ ; terraform apply -input=false tfplan"
             }
         }
     }
