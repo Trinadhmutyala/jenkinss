@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Apply and destroy') {
             steps {
-                sh 'pwd; terraform $action -input=false tfplan'
+                sh 'pwd; terraform $action -auto-approve'
             }
         }
     }
